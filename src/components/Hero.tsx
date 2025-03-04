@@ -187,9 +187,10 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className="mt-10 flex justify-center">
+      <div className="mt-10 flex flex-col items-center space-y-6 md:space-y-0 md:flex-row md:space-x-6">
+  {/* Hire Me | Resume Button */}
   <a 
-    href="https://www.dropbox.com/scl/fi/8s84vxc2ggjwt4uljsjx5/Main_Resume.pdf?rlkey=m7liyeaed4vqb94230e7tp9ls&st=apllqhhr&dl=0" // Replace with your actual resume link
+    href="https://www.dropbox.com/scl/fi/8s84vxc2ggjwt4uljsjx5/Main_Resume.pdf?rlkey=m7liyeaed4vqb94230e7tp9ls&st=apllqhhr&dl=0"
     target="_blank"
     rel="noopener noreferrer"
     className="relative flex items-center space-x-6 px-10 py-4 
@@ -213,15 +214,18 @@ const Hero = () => {
 
 
 
-      <div className={`absolute bottom-10 left-1/2 transform -translate-x-1/2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1200ms" }}>
-        <a 
-          href="#about" 
-          className="inline-flex items-center justify-center p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-glow-sm hover:shadow-glow hover:scale-110 transition-all duration-300 animate-float"
-          aria-label="Scroll to About section"
-        >
-          <ArrowDown size={20} className="text-primary" />
-        </a>
-      </div>
+<div className={`relative md:absolute md:bottom-10 md:left-1/2 md:transform md:-translate-x-1/2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1200ms" }}>
+    <a 
+      href="#about" 
+      className="inline-flex items-center justify-center p-3 rounded-full 
+                 bg-background/80 backdrop-blur-sm border border-border 
+                 shadow-glow-sm hover:shadow-glow hover:scale-110 
+                 transition-all duration-500 animate-float"
+      aria-label="Scroll to About section"
+    >
+      <ArrowDown size={20} className="text-primary" />
+    </a>
+  </div>
     </section>
   );
 };
