@@ -1,0 +1,9 @@
+
+/* Import all the stylesheets */
+@import './tailwind-base.css';
+@import './theme-colors.css';
+@import './base-styles.css';
+@import './components.css';
+@import './genz-aesthetics.css';
+@import './animations.css';
+@import './scrollbar.css';
