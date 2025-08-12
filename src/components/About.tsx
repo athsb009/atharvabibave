@@ -59,6 +59,8 @@ const About = () => {
       "Next.js", 
       "Node.js", 
       "Express", 
+      "Flask", 
+      "SQLAlchemy", 
       "REST Api", 
       "Redux", 
       "Tailwind", 
@@ -75,7 +77,10 @@ const About = () => {
       "GitHub", 
       "Jenkins", 
       "Terraform", 
-      "Kafka"
+      "Kafka",
+      "CloudWatch",
+      "S3",
+      "EC2"
     ],
     databases: [
       "SQL", 

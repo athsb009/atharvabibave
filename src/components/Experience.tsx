@@ -36,30 +36,47 @@ const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
       id: 1,
+      role: "Software Engineer Intern",
+      company: "Digital Factory",
+      period: "May 2025 - August 2025",
+      description: "Engineered end-to-end geofencing features and scalable backend services for location-based user segmentation and management.",
+      achievements: [
+        "Engineered end-to-end geofencing features using Next.js, Tailwind CSS, Flask, and PostgreSQL, enabling real-time location-based user segmentation via GPS-integrated geospatial logic.",
+        "Developed scalable backend services for the User Management Portal with Flask and SQLAlchemy, streamlining client onboarding, role assignments, and campaign configuration.",
+        "Built secure RESTful APIs for account, user, and location zone management, with role-based access control (RBAC) integrated into dynamic UI components.",
+        "Refactored backend middleware to support modular onboarding workflows and campaign tracking, improving maintainability and deployment flexibility.",
+        "Deployed and monitored applications on AWS EC2, managing assets via S3 and performance metrics through CloudWatch.",
+        "Collaborated with cross-functional teams to deliver production-ready solutions that enhanced system reliability and user experience."
+      ],
+      color: "bg-green-500/10 border-green-500/20 text-green-600",
+      icon: <Award />
+    },
+    {
+      id: 2,
       role: "Graduate Software Assistant",
       company: "UH Energy & Innovation",
       period: "2024 - Present",
-      description: "Redesigned and deployed a React-based website to enhance visibility and engagement, while leading automation initiatives for data analytics workflows.",
+      description: "Led web redesign and data automation initiatives, improving engagement, analytics efficiency, and project delivery speed.",
       achievements: [
         "Boosted website visibility, driving 1,000+ user interactions through an optimized React-based platform.",
         "Automated data analytics workflows by implementing real-time dashboards and ETL pipelines, reducing report generation time by 40% and improving decision-making efficiency.",
-        "Led agile sprints, facilitated daily stand-ups, and implemented project tracking using Jira, Trello, and Asana, ensuring seamless execution and accelerating project delivery by 30%.",
+        "Led agile sprints, facilitated daily stand-ups, and implemented project tracking using Trello ensuring seamless execution and accelerating project delivery by 30%.",
         "Analyzed research data and resource allocation, delivering insights for strategic planning."
       ],
       color: "bg-primary/10 border-primary/20 text-primary",
       icon: <Briefcase />
     },
     {
-      id: 2,
+      id: 3,
       role: "Software Development Intern",
       company: "CodeAlpha",
       period: "April 2023 – June 2023",
-      description: "Developed a scalable CRM dashboard, improving data accuracy and workflow automation using modern web technologies.",
+      description: "Developed and deployed a CRM dashboard, enhancing workflow automation, data integrity, and system scalability.",
       achievements: [
         "Built a CRM dashboard using React, Node.js, and MongoDB, automating workflows and improving data accuracy by 30%.",
         "Designed and optimized a robust database schema, cleaning and migrating existing data to enhance data integrity.",
         "Deployed the CRM system on AWS EC2, ensuring high availability, scalability, and secure cloud integration.",
-        "Implemented interactive data visualizations using Chart.js for real-time sales and customer analytics insights."
+        "Implemented interactive data visualizations using D3.js for real-time sales and customer analytics insights."
       ],
       color: "bg-accent/10 border-accent/20 text-accent",
       icon: <Calendar />

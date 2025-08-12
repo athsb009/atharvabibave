@@ -8,6 +8,7 @@ interface ProjectCardProps {
   image: string;
   tags: string[];
   githubUrl?: string;
+  liveUrl?: string;
   delay?: number;
 }
 
@@ -16,8 +17,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   image,
   tags,
-
   githubUrl,
+  liveUrl,
   delay = 0
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -51,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{title}</h3>
-        <p className="text-muted-foreground mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4 whitespace-pre-line leading-relaxed">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, index) => (
             <span 

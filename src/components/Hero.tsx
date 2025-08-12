@@ -1,5 +1,5 @@
 
-import { ArrowDown, Heart, Star, Sparkles, Zap, Rocket } from "lucide-react";
+import { ArrowDown, Heart, Star, Sparkles, Zap, Rocket, Download, Mail, Github, Linkedin, Code, Cloud } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
@@ -149,83 +149,144 @@ const Hero = () => {
         </div>
       ))}
       
-      <div className="container px-4 md:px-6 flex flex-col items-center text-center max-w-3xl mx-auto z-20">
-        <div className={`inline-block ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "400ms" }}>
-          <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-wider text-primary rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm shadow-glow-sm">
-          👋 Hey, I Am <span className="font-bold text-primary">Atharva Bibave</span>
-          </span>
-        </div>
-        
-        <h1 className={`text-4xl md:text-6xl font-bold leading-tight tracking-tighter mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "600ms" }}>
-          <span className="bg-gradient-to-r from-primary via-accent to-primary/70 dark:from-primary dark:via-primary/90 dark:to-accent/90 bg-clip-text text-transparent">
-            Creating Digital Experiences
-          </span> with precision and purpose
-        </h1>
-        
-        <p className={`text-lg md:text-xl text-muted-foreground mb-8 ${isVisible ? "animate-fade-in" : "opacity-0"}`} style={{ transitionDelay: "800ms" }}>
-  As a <span className="font-semibold text-primary">Software & Cloud Engineer</span>, I 
-  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-semibold"> architect and develop </span> 
-  scalable, secure digital solutions that seamlessly blend 
-  <span className="text-accent font-semibold"> performance</span> with 
-  <span className="text-primary font-semibold"> elegance</span> — solving real-world challenges with 
-  <span className="font-semibold"> innovation</span> and 
-  <span className="font-semibold"> precision</span>.
-</p>
+      <div className="container px-4 md:px-6 flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto z-20 gap-12">
+        {/* Left Content */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
+          <div className={`inline-block ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "400ms" }}>
+            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-wider text-primary rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm shadow-glow-sm">
+            👋 Hey, I Am <span className="font-bold text-primary">Atharva Bibave</span>
+            </span>
+          </div>
+          
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "600ms" }}>
+            <span className="bg-gradient-to-r from-primary via-accent to-primary/70 dark:from-primary dark:via-primary/90 dark:to-accent/90 bg-clip-text text-transparent">
+              Software & Cloud Engineer
+            </span>
+          </h1>
+          
+          <p className={`text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl ${isVisible ? "animate-fade-in" : "opacity-0"}`} style={{ transitionDelay: "800ms" }}>
+            I <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-semibold">architect and develop </span> 
+            scalable, secure digital solutions that seamlessly blend 
+            <span className="text-accent font-semibold"> performance</span> with 
+            <span className="text-primary font-semibold"> elegance</span> — solving real-world challenges with 
+            <span className="font-semibold"> innovation</span> and 
+            <span className="font-semibold"> precision</span>.
+          </p>
 
-        <div className={`flex flex-col sm:flex-row gap-4 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1000ms" }}>
-          <a 
-            href="#projects" 
-            className="inline-flex h-11 items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent px-8 text-sm font-medium text-primary-foreground shadow-glow transition-all hover:scale-105 hover:shadow-glow-lg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            View Projects
-          </a>
-          <a 
-            href="#contact" 
-            className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background/80 backdrop-blur-sm px-8 text-sm font-medium shadow-sm transition-all hover:bg-accent/20 hover:text-accent-foreground hover:scale-105 hover:shadow-glow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            Get In Touch
-          </a>
+          {/* Social Links */}
+          <div className={`flex items-center space-x-4 mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "900ms" }}>
+            <a 
+              href="https://github.com/athsb009" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+            >
+              <Github size={20} />
+            </a>
+            <a 
+              href="https://linkedin.com/in/atharva-bibave" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a 
+              href="mailto:atharva.bibave@example.com"
+              className="p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
+            >
+              <Mail size={20} />
+            </a>
+          </div>
+
+          <div className={`flex flex-col sm:flex-row gap-4 mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1000ms" }}>
+            <a 
+              href="#projects" 
+              className="inline-flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-primary to-accent px-8 text-base font-medium text-primary-foreground shadow-glow transition-all hover:scale-105 hover:shadow-glow-lg focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            >
+              <Rocket className="mr-2 h-5 w-5" />
+              View Projects
+            </a>
+            <a 
+              href="#contact" 
+              className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background/80 backdrop-blur-sm px-8 text-base font-medium shadow-sm transition-all hover:bg-accent/20 hover:text-accent-foreground hover:scale-105 hover:shadow-glow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              Get In Touch
+            </a>
+          </div>
+
+          {/* Resume Download Button */}
+          <div className={`mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1100ms" }}>
+            <a 
+              href="https://drive.google.com/file/d/1FRsNA3QBRj3J_Du3-wR3g6dXbfJN9nI-/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center space-x-2 px-8 py-4 
+                         text-lg font-semibold text-white rounded-full 
+                         bg-gradient-to-r from-[#7C4DFF] to-[#42A5F5] 
+                         shadow-lg transition-all duration-300 
+                         hover:scale-105 hover:shadow-2xl 
+                         dark:shadow-blue-400/30 dark:hover:shadow-blue-500/50 
+                         border border-transparent hover:border-white/30"
+            >
+              <Download className="h-5 w-5" />
+              <span>Download Resume</span>
+              <span className="relative z-10 text-white font-semibold">|</span>
+              <span>Hire Me!</span>
+
+              {/* Soft Mirrored Reflection Effect */}
+              <span className="absolute top-full left-0 right-0 h-8 
+                               bg-gradient-to-t from-[#7C4DFF]/20 to-transparent 
+                               opacity-30 scale-y-[-1] blur-md rounded-full"></span>
+            </a>
+          </div>
+        </div>
+
+        {/* Right Image Section */}
+        <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1200ms" }}>
+          {/* Main Image Container */}
+          <div className="relative">
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl scale-110 animate-pulse"></div>
+            
+            {/* Image Frame */}
+            <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover:shadow-primary/50 transition-all duration-500 hover:scale-105">
+              {/* Your Profile Image */}
+              <img 
+                src="/IMG_4614.png" 
+                alt="Atharva Bibave" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Floating Tech Icons */}
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 backdrop-blur-sm rounded-full border border-accent/30 flex items-center justify-center animate-bounce">
+              <Zap size={24} className="text-accent" />
+            </div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 flex items-center justify-center animate-bounce" style={{ animationDelay: '1s' }}>
+              <Code size={24} className="text-primary" />
+            </div>
+            <div className="absolute top-1/2 -right-8 w-12 h-12 bg-secondary/20 backdrop-blur-sm rounded-full border border-secondary/30 flex items-center justify-center animate-bounce" style={{ animationDelay: '2s' }}>
+              <Cloud size={20} className="text-secondary-foreground" />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="mt-10 flex flex-col items-center space-y-6 md:space-y-0 md:flex-row md:space-x-6">
-  {/* Hire Me | Resume Button */}
-  <a 
-    href="https://www.dropbox.com/scl/fi/8s84vxc2ggjwt4uljsjx5/Main_Resume.pdf?rlkey=m7liyeaed4vqb94230e7tp9ls&st=apllqhhr&dl=0"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="relative flex items-center space-x-6 px-10 py-4 
-               text-lg font-semibold text-white rounded-full 
-               bg-gradient-to-r from-[#7C4DFF] to-[#42A5F5] 
-               shadow-lg transition-all duration-300 
-               hover:scale-105 hover:shadow-2xl 
-               dark:shadow-blue-400/30 dark:hover:shadow-blue-500/50 
-               border border-transparent hover:border-white/30"
-  >
-    <span className="relative z-10">Hire Me!</span>
-    <span className="relative z-10 text-white font-semibold">|</span>
-    <span className="relative z-10">Resume →</span>
 
-    {/* Soft Mirrored Reflection Effect */}
-    <span className="absolute top-full left-0 right-0 h-8 
-                     bg-gradient-to-t from-[#7C4DFF]/20 to-transparent 
-                     opacity-30 scale-y-[-1] blur-md rounded-full"></span>
-  </a>
-</div>
-
-
-
-<div className={`relative md:absolute md:bottom-10 md:left-1/2 md:transform md:-translate-x-1/2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1200ms" }}>
-    <a 
-      href="#about" 
-      className="inline-flex items-center justify-center p-3 rounded-full 
-                 bg-background/80 backdrop-blur-sm border border-border 
-                 shadow-glow-sm hover:shadow-glow hover:scale-110 
-                 transition-all duration-500 animate-float"
-      aria-label="Scroll to About section"
-    >
-      <ArrowDown size={20} className="text-primary" />
-    </a>
-  </div>
+      {/* Scroll Indicator */}
+      <div className={`relative md:absolute md:bottom-10 md:left-1/2 md:transform md:-translate-x-1/2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1400ms" }}>
+        <a 
+          href="#about" 
+          className="inline-flex items-center justify-center p-3 rounded-full 
+                     bg-background/80 backdrop-blur-sm border border-border 
+                     shadow-glow-sm hover:shadow-glow hover:scale-110 
+                     transition-all duration-500 animate-float"
+          aria-label="Scroll to About section"
+        >
+          <ArrowDown size={20} className="text-primary" />
+        </a>
+      </div>
     </section>
   );
 };
