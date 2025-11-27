@@ -26,21 +26,21 @@ const About = () => {
       icon: <User className="h-8 w-8 mb-4 text-primary" />,
       title: "Who I Am",
       description:
-        "A detail-oriented developer and designer with a passion for creating intuitive user experiences.",
+      "A builder at heart. Currently completing my Master's in Computer Science at University of Houston, I combine academic depth with practical experience building SaaS platforms and interactive web applications.",
       delay: 100,
     },
     {
       icon: <Lightbulb className="h-8 w-8 mb-4 text-primary" />,
       title: "My Approach",
       description:
-        "I believe in simplicity, functionality, and purpose in every project I undertake.",
+      "I believe in seamless user experiences backed by clean code. I focus on creating responsive interfaces with React while ensuring the backend logic remains efficient and maintainable.",
       delay: 300,
     },
     {
       icon: <Code className="h-8 w-8 mb-4 text-primary" />,
       title: "What I Do",
       description:
-        "I transform complex problems into elegant solutions through thoughtful code and design.",
+      "I turn concepts into deployed products. I build dynamic applications using Next.js and TypeScript , manage real-time data with WebSockets , and optimize content delivery using AWS CloudFront.",
       delay: 500,
     },
   ];
@@ -65,12 +65,12 @@ const About = () => {
       "Redux", 
       "Tailwind", 
       "WebRTC", 
-      "Chart.js"
+      "Chart.js",
+      "Spring Boot"
     ],
     tools: [
       "AWS", 
       "Linux", 
-      "Kubernetes", 
       "Docker", 
       "CI/CD", 
       "Git", 
@@ -109,12 +109,10 @@ const About = () => {
           <span className="inline-block px-4 py-1.5 mb-4 text-xs font-medium tracking-wider text-primary rounded-full bg-primary/10 border border-primary/20">
             About Me
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Who I Am</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-muted-foreground text-lg">
-            I'm a passionate developer focused on creating elegant, user-centric digital experiences.
-            With attention to detail and a love for clean code, I build solutions that make a difference.
-          </p>
+          I am a full-stack developer passionate about building end-to-end digital products. From intuitive frontends to powerful serverless backends, I create software that solves real user problems.
+             </p>
         </div>
 
         {/* Information Cards */}

@@ -51,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{title}</h3>
+        <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{title}</h3>
         <p className="text-muted-foreground mb-4 whitespace-pre-line leading-relaxed">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, index) => (

@@ -41,12 +41,7 @@ const Experience = () => {
       period: "May 2025 - August 2025",
       description: "Engineered end-to-end geofencing features and scalable backend services for location-based user segmentation and management.",
       achievements: [
-        "Engineered end-to-end geofencing features using Next.js, Tailwind CSS, Flask, and PostgreSQL, enabling real-time location-based user segmentation via GPS-integrated geospatial logic.",
-        "Developed scalable backend services for the User Management Portal with Flask and SQLAlchemy, streamlining client onboarding, role assignments, and campaign configuration.",
-        "Built secure RESTful APIs for account, user, and location zone management, with role-based access control (RBAC) integrated into dynamic UI components.",
-        "Refactored backend middleware to support modular onboarding workflows and campaign tracking, improving maintainability and deployment flexibility.",
-        "Deployed and monitored applications on AWS EC2, managing assets via S3 and performance metrics through CloudWatch.",
-        "Collaborated with cross-functional teams to deliver production-ready solutions that enhanced system reliability and user experience."
+        "Engineered the transition from a monolithic architecture to microservices, improving system maintainability. I also built a comprehensive User Management Portal and automated deployment pipelines using Jenkins and AWS to ensure high availability for enterprise clients."
       ],
       color: "bg-green-500/10 border-green-500/20 text-green-600",
       icon: <Award />
@@ -56,13 +51,9 @@ const Experience = () => {
       role: "Graduate Software Assistant",
       company: "UH Energy & Innovation",
       period: "2024 - Present",
-      description: "Led web redesign and data automation initiatives, improving engagement, analytics efficiency, and project delivery speed.",
+      description: "I built a comprehensive User Management Portal and automated deployment pipelines using Jenkins and AWS to ensure high availability for enterprise clients.",
       achievements: [
-        "Boosted website visibility, driving 1,000+ user interactions through an optimized React-based platform.",
-        "Automated data analytics workflows by implementing real-time dashboards and ETL pipelines, reducing report generation time by 40% and improving decision-making efficiency.",
-        "Led agile sprints, facilitated daily stand-ups, and implemented project tracking using Trello ensuring seamless execution and accelerating project delivery by 30%.",
-        "Analyzed research data and resource allocation, delivering insights for strategic planning."
-      ],
+       "Currently bridging web development and data science. I develop the institute's React-based web platforms to boost engagement while simultaneously building Python models to analyze research data and inform strategic planning." ],
       color: "bg-primary/10 border-primary/20 text-primary",
       icon: <Briefcase />
     },
@@ -73,11 +64,7 @@ const Experience = () => {
       period: "April 2023 – June 2023",
       description: "Developed and deployed a CRM dashboard, enhancing workflow automation, data integrity, and system scalability.",
       achievements: [
-        "Built a CRM dashboard using React, Node.js, and MongoDB, automating workflows and improving data accuracy by 30%.",
-        "Designed and optimized a robust database schema, cleaning and migrating existing data to enhance data integrity.",
-        "Deployed the CRM system on AWS EC2, ensuring high availability, scalability, and secure cloud integration.",
-        "Implemented interactive data visualizations using D3.js for real-time sales and customer analytics insights."
-      ],
+       "Focused on backend stability and scalability. I developed RESTful APIs and Dashboards for a CRM system to manage data for thousands of users and handled the cloud configuration and deployment on AWS."],
       color: "bg-accent/10 border-accent/20 text-accent",
       icon: <Calendar />
     }
@@ -153,9 +140,9 @@ const Experience = () => {
               
               <h4 className="font-semibold text-lg mb-3">Key Achievements</h4>
               <ul className="space-y-2 mb-6">
-                {activeExperience.achievements.map((achievement, i) => (
+                {activeExperience.achievements.map((achievement, i) => (                                                          
                   <li key={i} className="flex items-start">
-                    <ChevronRight className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
+                   
                     <span>{achievement}</span>
                   </li>
                 ))}

@@ -1,8 +1,12 @@
 import ProjectCard from "./ProjectCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +24,41 @@ const Projects = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const checkScrollability = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollability();
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', checkScrollability);
+      window.addEventListener('resize', checkScrollability);
+      return () => {
+        container.removeEventListener('scroll', checkScrollability);
+        window.removeEventListener('resize', checkScrollability);
+      };
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = scrollContainerRef.current.clientWidth * 0.9;
+      const scrollTo = direction === 'left' 
+        ? scrollContainerRef.current.scrollLeft - scrollAmount
+        : scrollContainerRef.current.scrollLeft + scrollAmount;
+      
+      scrollContainerRef.current.scrollTo({
+        left: scrollTo,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const projects = [
     {
       title: "SaaS Workflow Automation Platform",
@@ -33,17 +72,25 @@ const Projects = () => {
     {
       title: "Real-Time Virtual Office Platform",
       description: "Developed a real-time multiplayer virtual office platform using React, TypeScript, Phaser 3, and WebRTC. Delivers sub-100ms latency for video calls, screen sharing, and collaborative whiteboards.\n\nFeatures customizable workspaces with avatar customization, interactive objects, and multi-room architecture. Built with CI/CD for rapid, reliable delivery.",
-      image: "/coder-house.png",
+      image: "/coderhouse.png",
       tags: ["React", "TypeScript", "Phaser 3", "Colyseus", "WebRTC", "Node.js", "GitHub Actions", "Multiplayer", "Avatar Customization", "Interactive Objects"],
       githubUrl: "https://github.com/athsb009/coders-house",
       liveUrl: "https://codershouse-demo.vercel.app",
       delay: 300
     },
     {
-      title: "Cloud-Based CDN",
-      description: "A scalable content delivery network (CDN) leveraging AWS services for optimized global content distribution. Implements intelligent caching strategies, geographic load balancing, and real-time performance monitoring for optimal user experience worldwide.",
+      title: "AI Multi-Agent Automation Platform",
+      description: "Developed an AI-powered multi-agent workflow automation system using GPT-5.1 and Playwright that captures and documents web application workflows in real-time, achieving 90%+ accuracy across diverse applications.\n\nEngineered a self-healing execution engine with 7+ fallback strategies per action, enabling the system to automatically recover from 85% of selector failures through text-based matching, keyboard shortcuts, and AI vision feedback.",
+      image: "/ai_automation.png",
+      tags: ["Python", "Playwright", "OpenAI API", "GPT-5.1", "AI Vision", "Multi-Agent", "Self-Healing", "Automation", "Web Scraping"],
+      githubUrl: "https://github.com/athsb009",
+      delay: 700
+    },
+    {
+      title: "Scalable Image Delivery Platform",
+      description: "Engineered an end-to-end image processing solution featuring a serverless AWS pipeline (S3, Lambda, Sharp) for efficient image resizing and optimization.\n\nImplemented AWS CloudFront as a global CDN to cache and serve resized images, optimizing content delivery worldwide. Deployed application on AWS EC2, using Nginx as a reverse proxy to route frontend/backend traffic.",
       image: "/cloud_cdn.png",
-      tags: ["AWS CloudFront", "S3", "Lambda", "CloudWatch", "EC2", "Node.js", "React"],
+      tags: ["AWS S3", "Lambda", "CloudFront", "EC2", "Nginx", "PostgreSQL", "Sharp", "Serverless"],
       githubUrl: "https://github.com/athsb009/cloud_cdn",
       liveUrl: "https://cloud-cdn-demo.vercel.app",
       delay: 500
@@ -67,19 +114,52 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              tags={project.tags}
-              githubUrl={project.githubUrl}
-              liveUrl={project.liveUrl}
-              delay={project.delay}
-            />
-          ))}
+        <div className="relative -mx-8 md:-mx-12">
+          {/* Left Arrow */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll('left')}
+              className="absolute -left-12 md:-left-16 lg:-left-20 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-card/80 backdrop-blur-sm border border-border shadow-lg hover:bg-card transition-all hover:scale-110"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft size={24} className="text-primary" />
+            </button>
+          )}
+          
+          {/* Right Arrow */}
+          {canScrollRight && (
+            <button
+              onClick={() => scroll('right')}
+              className="absolute -right-12 md:-right-16 lg:-right-20 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-card/80 backdrop-blur-sm border border-border shadow-lg hover:bg-card transition-all hover:scale-110"
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={24} className="text-primary" />
+            </button>
+          )}
+          
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent snap-x snap-mandatory px-8 md:px-12"
+          >
+            <div className="flex gap-8" style={{ width: 'max-content' }}>
+              {projects.map((project, index) => (
+                <div 
+                  key={project.title} 
+                  className="flex-shrink-0 snap-start w-[calc(100vw-4rem)] md:w-[420px] lg:w-[440px]"
+                >
+                  <ProjectCard 
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                    tags={project.tags}
+                    githubUrl={project.githubUrl}
+                    liveUrl={project.liveUrl}
+                    delay={project.delay}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Enhanced GitHub Section */}

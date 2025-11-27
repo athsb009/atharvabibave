@@ -192,7 +192,7 @@ const Hero = () => {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:atharva.bibave@example.com"
+              href="mailto:abibave09@gmail.com"
               className="p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110"
             >
               <Mail size={20} />
@@ -219,7 +219,7 @@ const Hero = () => {
           {/* Resume Download Button */}
           <div className={`mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1100ms" }}>
             <a 
-              href="https://drive.google.com/file/d/1FRsNA3QBRj3J_Du3-wR3g6dXbfJN9nI-/view?usp=drive_link"
+              href="https://drive.google.com/file/d/11Oup-3FfPDv0RdIWUwHvfd5W1-L_PDlj/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center space-x-2 px-8 py-4 
