@@ -61,12 +61,27 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "distcache — Distributed Cache in Go",
+      description: "Built a distributed cache from scratch in Go, implementing consistent hashing with 150 virtual nodes across a 256-shard RWMutex-protected store for high-concurrency reads and writes.\n\nAdded semi-synchronous replication and heartbeat-based failure detection for automatic failover. Benchmarked at 57K ops/sec with p99 latency under 2ms, 409μs replication lag, and failover in under 3 seconds.",
+      image: "/distcache.png", // TODO: replace with your actual screenshot/diagram path
+      tags: ["Go", "Distributed Systems", "Consistent Hashing", "Concurrency", "Replication", "Failure Detection", "Benchmarking"],
+      githubUrl: "https://github.com/athsb009/distributed-in-memory-key-value-cache", // TODO: confirm repo URL
+      delay: 900
+    },
+    {
+      title: "AI Multi-Agent Automation Platform",
+      description: "Developed an AI-powered multi-agent workflow automation system using GPT-5.1 and Playwright that captures and documents web application workflows in real-time, achieving 90%+ accuracy across diverse applications.\n\nEngineered a self-healing execution engine with 7+ fallback strategies per action, enabling the system to automatically recover from 85% of selector failures through text-based matching, keyboard shortcuts, and AI vision feedback.",
+      image: "/ai_automation.png",
+      tags: ["Python", "Playwright", "OpenAI API", "GPT-5.1", "AI Vision", "Multi-Agent", "Self-Healing", "Automation", "Web Scraping"],
+      githubUrl: "https://github.com/athsb009/ai-workflow-automation",
+      delay: 700
+    },
+    {
       title: "SaaS Workflow Automation Platform",
       description: "Built a full-stack Zapier-style automation platform with visual drag-and-drop workflow builder. Integrates Google Drive, Slack, Notion, and Discord via OAuth and webhooks.\n\nFeatures sequential execution, real-time preview, and Stripe-powered billing. Deployed on AWS with Docker, NGINX, and GitHub Actions for zero-downtime CI/CD.",
       image: "/fuzzie.png",
       tags: ["Next.js", "TypeScript", "PostgreSQL", "Docker", "AWS", "Stripe", "Clerk", "OAuth", "Webhooks", "NGINX", "GitHub Actions", "CloudWatch"],
       githubUrl: "https://github.com/athsb009/fuzzie-automation",
-      liveUrl: "https://zapdash-demo.vercel.app",
       delay: 100
     },
     {
@@ -75,16 +90,7 @@ const Projects = () => {
       image: "/coderhouse.png",
       tags: ["React", "TypeScript", "Phaser 3", "Colyseus", "WebRTC", "Node.js", "GitHub Actions", "Multiplayer", "Avatar Customization", "Interactive Objects"],
       githubUrl: "https://github.com/athsb009/coders-house",
-      liveUrl: "https://codershouse-demo.vercel.app",
       delay: 300
-    },
-    {
-      title: "AI Multi-Agent Automation Platform",
-      description: "Developed an AI-powered multi-agent workflow automation system using GPT-5.1 and Playwright that captures and documents web application workflows in real-time, achieving 90%+ accuracy across diverse applications.\n\nEngineered a self-healing execution engine with 7+ fallback strategies per action, enabling the system to automatically recover from 85% of selector failures through text-based matching, keyboard shortcuts, and AI vision feedback.",
-      image: "/ai_automation.png",
-      tags: ["Python", "Playwright", "OpenAI API", "GPT-5.1", "AI Vision", "Multi-Agent", "Self-Healing", "Automation", "Web Scraping"],
-      githubUrl: "https://github.com/athsb009",
-      delay: 700
     },
     {
       title: "Scalable Image Delivery Platform",
@@ -92,8 +98,15 @@ const Projects = () => {
       image: "/cloud_cdn.png",
       tags: ["AWS S3", "Lambda", "CloudFront", "EC2", "Nginx", "PostgreSQL", "Sharp", "Serverless"],
       githubUrl: "https://github.com/athsb009/cloud_cdn",
-      liveUrl: "https://cloud-cdn-demo.vercel.app",
       delay: 500
+    },
+    {
+      title: "Battery Sensor Analytics Dashboard",
+      description: "Built a real-time analytics dashboard for battery telemetry using a physics-based battery model streaming data at 1Hz.\n\nVisualizes live sensor metrics with Recharts, built on a fast Vite + Tailwind frontend for a responsive, low-latency monitoring experience.",
+      image: "/battery_dashboard.png", // TODO: replace with your actual screenshot path
+      tags: ["React 18", "TypeScript", "Vite", "Tailwind", "Recharts", "Physics Simulation", "Real-Time Telemetry"],
+      githubUrl: "https://github.com/athsb009/Battery_Analytics", // TODO: confirm repo URL
+      delay: 1100
     }
   ];
 

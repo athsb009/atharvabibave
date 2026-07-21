@@ -219,7 +219,7 @@ const Hero = () => {
           {/* Resume Download Button */}
           <div className={`mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ transitionDelay: "1100ms" }}>
             <a 
-              href="https://drive.google.com/file/d/11Oup-3FfPDv0RdIWUwHvfd5W1-L_PDlj/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1EUhbIgX5EbYVaDPU4FhJHQNMSdwzyNba/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center space-x-2 px-8 py-4 
